@@ -1,0 +1,48 @@
+<h1>
+	Template-Based Contact Form Example
+</h1>
+
+<div class='container'>
+	<form 
+		#myForm='ngForm' 
+		(ngSubmit)='onSubmit(myForm)' 
+		class='templateForm'
+	>
+		<input 
+			type='text' 
+			class='name' 
+			name='fullName' 
+			placeholder='Your Full Name' 
+			ngModel 
+			minLength='2' 
+			maxLength='20' 
+			required
+		>
+		<br />
+		<input 
+			type='email' 
+			class='email' 
+			name='email' 
+			placeholder='Your email' 
+			ngModel 
+			required 
+			pattern='/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/'
+		>
+		<br />
+	
+		<textarea 
+			class='message' 
+			name='message' 
+			placeholder='Your message' 
+			ngModel 
+			required 
+			rows="5"
+		></textarea>
+		<br />
+		<input 
+			class='submit' 
+			type='submit' 
+			value='send'
+		>
+	</form>
+</div>
